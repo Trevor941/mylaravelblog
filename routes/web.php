@@ -1,0 +1,27 @@
+<?php
+
+use Illuminate\Support\Facades\Route;
+
+/*
+|--------------------------------------------------------------------------
+| Web Routes
+|--------------------------------------------------------------------------
+|
+| Here is where you can register web routes for your application. These
+| routes are loaded by the RouteServiceProvider within a group which
+| contains the "web" middleware group. Now create something great!
+|
+*/
+
+
+Route::get('/','App\Http\Controllers\BlogsController@index');
+Auth::routes();
+
+Route::get('/home',[App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/admin',[App\Http\Controllers\HomeController::class, 'admin'])->name('admin');
+Route::resource('blogs','App\Http\Controllers\BlogsController');
+Route::get('/users/administrators','App\Http\Controllers\UsersController@getAdminstrators');
+Route::get('/users/readers','App\Http\Controllers\UsersController@getReaders');
+Route::get('/users/authors','App\Http\Controllers\UsersController@getAuthors');
+Route::get('/myblogs','App\Http\Controllers\BlogsController@myBlogs');
+Route::get('/chat/{id}','App\Http\Controllers\MessagesController@chatPage');
