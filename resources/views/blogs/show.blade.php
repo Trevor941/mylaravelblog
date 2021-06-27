@@ -3,7 +3,7 @@
 <div class="col-md-12">
 <div class="card card-block">
         <div class="card-header">
-        <h3 class="text-center">{{$blog->title}}</h3>
+        <h3>{{$blog->title}}</h3>
         </div>
         <img src="/images/{{$blog->blog_image}}" alt="{{$blog->title}}">
             <div class="card-body">

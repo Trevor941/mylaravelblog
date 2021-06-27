@@ -158,5 +158,11 @@ class BlogsController extends Controller
 
 
     }
+    public function userBlogs($id){
+      $user = User::find($id);
+      $username = $user->name;
+      $user_blogs = $user->blogs;
+      return view('blogs.userblogs',compact('user_blogs', 'username'));
+    }
    
 }

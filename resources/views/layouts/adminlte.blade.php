@@ -44,6 +44,10 @@
 [class*='sidebar-dark-'] .nav-sidebar > .nav-item > .nav-treeview {
     background: #737381 !important;
 }
+
+.disqus-footer__wrapper{
+display: none !important;
+}
     </style>
 </head>
 <body class="hold-transition sidebar-mini layout-fixed layout-navbar-fixed">
@@ -206,5 +210,6 @@
     selector: 'textarea.tinymce-editor'
  });
 </script>
+@include('messages.scripts')
 </body>
 </html>

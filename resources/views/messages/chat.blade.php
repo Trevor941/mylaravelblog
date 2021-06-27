@@ -1,5 +1,7 @@
 @extends('layouts.adminlte')
+
 @section('content')
+
 <div class="col-md-8 offset-md-2">
 <div class="card card-block">
     <div class="card-header">
@@ -7,21 +9,32 @@
     </div>
         <div class="card-body full-height">
             <div class="jumbotron">
-                @foreach($messages as $message)
-                <div class="alert alert-secondary" role="alert">
-                    {{$message->message}}
-                  </div>
+                <ul id="messages" class="list-group">
+                @foreach($chatmessages as $message)
+                
+                @if(auth()->user()->id === $message->sender_id)
+                    <li class="alert bg-white" style="list-style-type: none;" role="alert">
+                        {{$message->message}}
+                    </li>
+                    @else
+                    <li class="alert alert-secondary" style="list-style-type: none; text-align:right;" role="alert">
+                        {{$message->message}}
+                    </li>
+                @endif
+              
                 @endforeach
+                </ul>
             </div>
-        <form action="/blogs" method="POST" enctype="multipart/form-data">
+        <form action="{{route('send.msg', $receiver->id)}}" method="POST" enctype="multipart/form-data">
             @csrf
             <div class="form-inline">
             <div class="form-group col-12">
                 @error('body')
                 <div class="alert alert-danger">{{$message}}</div>
                 @enderror
-                <textarea class="form-control col-sm-10" name="body" rows="1"></textarea>
-                <button type="submit" class="btn btn-secondary form-control col-sm-2">Save Blog</button>
+                {{-- <textarea class="form-control col-sm-10" name="message" rows="2"></textarea> --}}
+                <input type="text" class="form-control col-sm-10" name="message" placeholder="Type your message here..."/>
+                <button type="submit" class="btn btn-secondary form-control col-sm-2">Send</button>
             </div>
           </div>
         </form>

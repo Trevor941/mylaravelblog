@@ -49,10 +49,10 @@ class User extends Authenticatable
     }
 
     public function chat(){
-        return $this->belongsToMany('App\Models\Chats', 'chat_users');
+        return $this->belongsToMany('App\Models\Chat', 'chat_users');
     }
 
     public function messages(){
-        return $this->hasMany('App\Models\Message');
+        return $this->hasMany('App\Models\Message','sender_id');
     }
 }

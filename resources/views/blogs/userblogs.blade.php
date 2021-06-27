@@ -1,20 +1,20 @@
 @extends('layouts.adminlte')
 @section('content')
-    @if(count($blogs) > 0)
-        @foreach($blogs as $blog)
+    @if(count($user_blogs) > 0)
+        @foreach($user_blogs as $blog)
         <div class="col-md-4">
         <div class="card card-block" style="width: 24rem;">
             <div class="card-header">
             <h3>{{$blog->title}}</h3>
             </div>
-            <img src="images/{{$blog->blog_image}}" alt="{{$blog->title}}">
+            <img src="/images/{{$blog->blog_image}}" alt="{{$blog->title}}">
                 <div class="card-body">
                 {{-- <p>{!! str_limit($blog->body, 100) !!}</p> --}}
                 <p>{{ substr(strip_tags($blog->body), 0, 100) }}...</p>
                 <p><a href="/blogs/{{$blog->id}}">read more</a></p>
                 </div>
                 <div class="card-footer text-white">
-                  <small class="text-secondary">Written by <a></a></small>
+                  <small>Written by <a>{{$username}}</a></small>
                 </div>
         </div>
     </div>

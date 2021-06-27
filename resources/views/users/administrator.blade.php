@@ -1,12 +1,12 @@
 @extends('layouts.adminlte')
 @section('content')
+<div class="col-md-8 offset-md-2">
     @if(count($admins) > 0)
+    <ul class="list-group">
         @foreach($admins as $admin)
-        <div class="col-md-4">
-        <div class="card card-block" style="width: 24rem;">
-            <div class="card-header">
-            <h3>{{$admin->name}}</h3>
-            </div>
+            <li class="list-group-item bg-secondary">{{$admin->name}} <span class="float-right"><a href="/chat/{{$receiver_id}}"><i class="far fa-2x fa-envelope"></i><a></span></li>
+            
+           
             {{-- <img src="images/{{$blog->blog_image}}" alt="{{$blog->title}}"> --}}
                 {{-- <div class="card-body">
                 <p>{{ substr(strip_tags($blog->body), 0, 100) }}...</p>
@@ -15,13 +15,15 @@
                 {{-- <div class="card-footer text-white">
                   <small>Written by <a>Trevor</a></small>
                 </div> --}}
-        </div>
-    </div>
+   
+</li>
         @endforeach
     
  @else
-  <p>No blogs have been found</p>
+  <p>No blogs have been found </p>
+</ul>
   @endif
+</div>
 @endsection
 <style>
     body{
