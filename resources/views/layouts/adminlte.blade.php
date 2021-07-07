@@ -22,7 +22,8 @@
 
 <script src="https://cdn.tiny.cloud/1/7fegfscst1ltbtfw6yki02u9tgjmp7ggfp3aou7nrw3lwxi5/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script>
 <script src="https://cdn.tiny.cloud/1/7fegfscst1ltbtfw6yki02u9tgjmp7ggfp3aou7nrw3lwxi5/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script>  
-   
+<script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js" integrity="sha512-AA1Bzp5Q0K1KanKKmvN/4d3IRKVlv9PYgwFPvm32nPO6QS8yH1HO7LbgB1pgiOxPtfeg5zEn2ba64MUcqJx6CA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>   
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <style>
       .layout-navbar-fixed .wrapper .main-header{
@@ -154,21 +155,9 @@ display: none !important;
                 </a>
                 <ul class="nav nav-treeview" style="display: block;">
                   <li class="nav-item">
-                    <a href="/users/administrators" class="nav-link">
+                    <a href="/users" class="nav-link">
                       <i class="fas fa-user-lock"></i>
-                      <p>Administrators</p>
-                    </a>
-                  </li>
-                  <li class="nav-item">
-                    <a href="/users/authors" class="nav-link">
-                      <i class="fas fa-user-edit"></i>
-                      <p>Authors</p>
-                    </a>
-                  </li>
-                  <li class="nav-item">
-                    <a href="/users/readers" class="nav-link">
-                      <i class="fas fa-user-check"></i>
-                      <p>Readers</p>
+                      <p>Users</p>
                     </a>
                   </li>
                 </ul>
@@ -205,11 +194,13 @@ display: none !important;
 <script src="{{ asset('js/app.js') }}" defer></script>
 <script src="https://cdn.tiny.cloud/1/no-api-key/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script>   
 <script src="https://cloud.tinymce.com/stable/tinymce.min.js"></script>
+
 <script>
   tinymce.init({
     selector: 'textarea.tinymce-editor'
  });
 </script>
 @include('messages.scripts')
+@yield('customScripts')
 </body>
 </html>

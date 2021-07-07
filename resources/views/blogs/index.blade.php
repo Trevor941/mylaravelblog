@@ -23,6 +23,16 @@
  @else
   <p>No blogs have been found</p>
   @endif
+
+  @if(Session::has('success'))
+<script>
+    // swal("Great Job!", "{!! Session::get('success') !!}", "succeess",{
+    //     button:"OK",
+    // });
+    swal("Success", "{!! Session::get('success') !!}", "success");
+</script>
+
+@endif
 @endsection
 <style>
     body{
