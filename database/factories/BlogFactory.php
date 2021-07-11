@@ -23,9 +23,10 @@ class BlogFactory extends Factory
     {
         return [
             //
-            'title'=> $this->faker->title,
-            'body' => $this->faker->text,
-            'blog_image' => $this->faker->image,
+            'title'=> $this->faker->sentence(5),
+            'body' => $this->faker->paragraph(300),
+            'blog_image' => '',
+            'user_id'=> 2
 
 
         ];

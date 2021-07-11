@@ -14,6 +14,11 @@ class Blog extends Model
     protected $fillable =['title', 'body', 'blog_image'];
 
     public function user(){
-        return belongsTo('App\Models\User');
+        return $this->belongsTo(User::class);
     }
+
+    public function categories(){
+        return $this->belongsToMany(Category::class);
+    }
+    
 }
