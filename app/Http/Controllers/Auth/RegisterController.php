@@ -9,6 +9,7 @@ use Illuminate\Foundation\Auth\RegistersUsers;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
 
+
 class RegisterController extends Controller
 {
     /*
@@ -29,7 +30,7 @@ class RegisterController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = RouteServiceProvider::DASHBOARD;
+    protected $redirectTo = RouteServiceProvider::ADMIN;
 
     /**
      * Create a new controller instance.
@@ -70,5 +71,13 @@ class RegisterController extends Controller
             'password' => Hash::make($data['password']),
             'role_id' => 3
         ]);
+        
+        return redirect('/login')->with('success', 'Registration successful, login with your email and password');
     }
+
+   
+
+    
+    
+
 }

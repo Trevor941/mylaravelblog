@@ -1,7 +1,7 @@
 <?php
 
 namespace Database\Factories;
-
+use Illuminate\Support\Str;
 use App\Models\Blog;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
@@ -21,9 +21,11 @@ class BlogFactory extends Factory
      */
     public function definition()
     {
+    
         return [
             //
-            'title'=> $this->faker->sentence(5),
+            'title'=> $this->faker->sentence(3),
+            'slug' =>Str::of($this->faker->sentence(3))->slug('-'),
             'body' => $this->faker->paragraph(300),
             'blog_image' => '',
             'user_id'=> 2

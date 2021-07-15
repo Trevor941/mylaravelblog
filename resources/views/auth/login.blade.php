@@ -38,8 +38,13 @@
     <div class="row justify-content-center h-100">
         <div class="col-md-7 my-auto">
             <div class="card card-block shadow-lg">
-                <div class="card-header text-center">{{ __('Login') }}</div>
-
+            @if(session('success'))
+               <div class ="alert alert-success"> {{session('success')}}</div>
+            @endif
+                <div class="card-header text-center">
+                {{ __('Login') }}
+                 
+                </div>
                 <div class="card-body" style="">
                     <form method="POST" action="{{ route('login') }}" style="font-size: 16px;">
                         @csrf

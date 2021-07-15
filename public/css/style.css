@@ -597,8 +597,8 @@ div.tab button:hover {
 }
 
 .footer {
-    padding: 4rem 0 4rem;
-    background: url(images/footer.png) repeat-x center bottom #edeff2;
+   
+    padding: 10px;
 }
 
 .footer.wb {

@@ -11,7 +11,11 @@ class Blog extends Model
 
     protected $table = 'blogs';
 
-    protected $fillable =['title', 'body', 'blog_image'];
+    protected $fillable =['title', 'slug', 'body', 'blog_image'];
+    public function getRouteKeyName()
+    {
+        return 'slug';
+    }
 
     public function user(){
         return $this->belongsTo(User::class);

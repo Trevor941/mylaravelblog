@@ -57,6 +57,7 @@ class BlogsController extends Controller
          $image->move(public_path('images'), $imageName);
         $blog = new Blog();
         $blog->title = $request->title;
+        $blog->slug = Str::of($blog->title)->slug('-');
         $blog->body = $request->body;
          $blog->blog_image = $imageName;
         $user->blogs()->save($blog);
@@ -117,6 +118,7 @@ class BlogsController extends Controller
         $blog = Blog::findOrFail($id);
         if($user_id === $blog->user_id){
        $blog->title = $request->title;
+       $blog->slug = Str::of($blog->title)->slug('-');
        $blog->body = $request->body;
        if($request->hasFile('blog_image')){
         $blog->blog_image = $imageName;

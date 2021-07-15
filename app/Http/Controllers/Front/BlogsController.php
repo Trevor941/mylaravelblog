@@ -54,9 +54,14 @@ class BlogsController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show($slug)
     {
         //
+        //$blog = Blog::findOrFail($slug);
+        $blog = Blog::where('slug', $slug)->first();
+        return view('front.singleblog')->with('blog', $blog)
+               ->with('categories', Category::all())
+               ->with('featuredBlogs', Blog::all()->random(2));
     }
 
     /**
