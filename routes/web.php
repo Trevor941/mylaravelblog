@@ -16,13 +16,16 @@ use Illuminate\Support\Facades\Route;
 
 //Route::get('/','App\Http\Controllers\BlogsController@index');
 Auth::routes();
-
+Route::get('/trashedBlogs','App\Http\Controllers\BlogsController@getTrashedBlogs');
 Route::get('/admin',[App\Http\Controllers\BlogsController::class, 'index']);
 //Route::get('/admin',[App\Http\Controllers\HomeController::class, 'admin'])->name('admin');
 Route::resource('blogs','App\Http\Controllers\BlogsController');
 Route::get('/blogs/user/{id}','App\Http\Controllers\BlogsController@userBlogs');
 Route::get('/users','App\Http\Controllers\UsersController@index');
 Route::get('/myblogs','App\Http\Controllers\BlogsController@myBlogs');
+Route::get('/trashedBlogs','App\Http\Controllers\BlogsController@getTrashedBlogs');
+Route::get('/restoreBlogs/{id}','App\Http\Controllers\BlogsController@restoreBlogs');
+Route::delete('/deleteBlogs/{id}','App\Http\Controllers\BlogsController@deleteBlogPermanently');
 Route::get('/chat/{id}','App\Http\Controllers\MessagesController@chatPage');
 Route::post('/sendmsg/{id}','App\Http\Controllers\MessagesController@sendMessage')->name('send.msg');
 

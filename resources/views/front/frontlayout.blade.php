@@ -37,7 +37,7 @@
     <!-- Version Garden CSS for this template -->
     <link href="{{asset('css/css/version/garden.css')}}" rel="stylesheet">
     <script src="{{ asset('css/js/app.js') }}" defer></script>
-
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.1.0/highlight.min.js" integrity="sha512-z+/WWfyD5tccCukM4VvONpEtLmbAm5LDu7eKiyMQJ9m7OfPEDL7gENyDRL3Yfe8XAuGsS2fS4xSMnl6d30kqGQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <!--[if lt IE 9]>
       <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
       <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
@@ -141,12 +141,29 @@
 
     <!-- Core JavaScript
     ================================================== -->
+
     <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.1.0/highlight.min.js" integrity="sha512-z+/WWfyD5tccCukM4VvONpEtLmbAm5LDu7eKiyMQJ9m7OfPEDL7gENyDRL3Yfe8XAuGsS2fS4xSMnl6d30kqGQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="{{ asset('js/app.js') }}" defer></script>
     <script src="js/jquery.min.js"></script>
     <script src="js/tether.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
     <script src="js/custom.js"></script>
 
+    <script>
+        $(document).ready(function(){
+            var search = $('#search').val();
+            if(search != ''){
+            $('#searchSubmit').click(function(){
+            $('#blogSection').highlight(search,{
+            background:"#ffff00",
+           color:"#000",
+            bold:false,
+            });
+            });
+            }
+        });
+
+    </script>
 </body>
 </html>

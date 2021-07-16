@@ -16,15 +16,23 @@ class BlogsController extends Controller
      */
     public function blogs()
     {
-        //
-        
+        //checking if there is a search query for blogs
+        $search = request()->query('search');
+        if($search){
+            $blogs = Blog::where('title','LIKE', "%{$search}%")
+            ->orWhere('body','LIKE', "%{$search}%")
+            ->simplePaginate(5);
+        }
+        else{
+            $blogs = Blog::simplePaginate(5);
+        }
             
-        
-        $blogs = Blog::simplePaginate(5);
         $categories = Category::all();
         return view('front.blogs')
         ->with('blogs', $blogs)
-        ->with('categories', $categories);
+        ->with('mainThreeBlogs', Blog::all()->random(3))
+        ->with('categories', $categories)
+        ->with('recentBlogs', Blog::orderBy('created_at', 'desc')->take(3)->get());
     }
 
     /**
@@ -61,8 +69,11 @@ class BlogsController extends Controller
         $blog = Blog::where('slug', $slug)->first();
         return view('front.singleblog')->with('blog', $blog)
                ->with('categories', Category::all())
-               ->with('featuredBlogs', Blog::all()->random(2));
+               ->with('featuredBlogs', Blog::all()->random(2))
+               ->with('recentBlogs', Blog::orderBy('created_at', 'desc')->take(3)->get());
     }
+
+  
 
     /**
      * Show the form for editing the specified resource.

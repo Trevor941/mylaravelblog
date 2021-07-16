@@ -61,7 +61,7 @@ class BlogsController extends Controller
         $blog->body = $request->body;
          $blog->blog_image = $imageName;
         $user->blogs()->save($blog);
-        return redirect('/')->with('success', 'Blog added successfully');
+        return redirect('/admin')->with('success', 'Blog added successfully');
 
     }
 
@@ -144,12 +144,33 @@ class BlogsController extends Controller
         $blog = Blog::findOrFail($id);
         if($user_id === $blog->user_id){
         $blog->delete();
-        return redirect('/')->with('success', 'Blog deleted successfully');
+        return redirect('/admin')->with('success', 'Blog deleted successfully');
     }
         else{
             return redirect('/blogs'.'/'.$blog->id)->with('error', 'You have no right to make changes to this blog');
         }
     }
+
+    //retrieve trashed blogs
+    public function getTrashedBlogs(){
+        $trashedBlogs = Blog::onlyTrashed()->paginate(10);
+        return view('blogs.trashedBlogs', compact('trashedBlogs'));
+    }
+
+    //restore trashed blogs
+    public function restoreBlogs($id){
+        $restoreBlog = Blog::where('id', $id)->withTrashed()->first();
+        $restoreBlog->restore();
+        return redirect('/admin')->with('success', 'Blog restored successfully');
+    }
+
+    //permanent blog deletion
+    public function deleteBlogPermanently($id){
+        $deleteBlog = Blog::where('id', $id)->withTrashed()->first();
+        $deleteBlog->forceDelete();
+        return redirect('/trashedBlogs')->with('success', 'Blog deleted permanently');
+    }
+
 
     public function myBlogs(){
         $user_id = auth()->user()->id;

@@ -1,7 +1,7 @@
 @extends('layouts.adminlte')
 @section('content')
-    @if(count($blogs) > 0)
-        @foreach($blogs as $blog)
+    @if(count($trashedBlogs) > 0)
+        @foreach($trashedBlogs as $blog)
         <div class="col-md-4">
         <div class="card card-block" style="width: 24rem;">
             <div class="card-header">
@@ -11,17 +11,30 @@
                 <div class="card-body">
                 {{-- <p>{!! str_limit($blog->body, 100) !!}</p> --}}
                 <p>{{ substr(strip_tags($blog->body), 0, 100) }}...</p>
-                <p><a href="/blogs/{{$blog->id}}">read more</a></p>
+               
                 </div>
                 <div class="card-footer text-white">
-                  <small class="text-white">Written by {{$blog->user->name}}</small>
+                    <span class="float-left">
+                    <form method="get" action="/restoreBlogs/{{$blog->id}}">
+                        @csrf
+                        <button class="btn btn-sm btn-primary">Restore</button>
+                    </form>  <!--b-->
+                </span>
+                  <span class="">
+                 <form method="post" action="/deleteBlogs/{{$blog->id}}">
+                    @csrf
+                    <button class="btn btn-sm btn-danger ml-2">Delete</button>
+                    @method('delete')
+                </form>
+            </span>
+                 
                 </div>
         </div>
     </div>
         @endforeach
     
  @else
-  <p>No blogs have been found</p>
+  <p>Trash is empty</p>
   @endif
 
   @if(Session::has('success'))
@@ -51,10 +64,7 @@
         padding: 60px;
         background: #f2f2f2;
     }
-    button{
-        background: #737381 !important;
-         border: 1px solid #666 !important;
-    }
+   
     .card-footer{
         padding:0px; 
         background: #737381 !important;

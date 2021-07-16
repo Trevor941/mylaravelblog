@@ -143,6 +143,12 @@ display: none !important;
                       <p>Read Blogs</p>
                     </a>
                   </li>
+                  <li class="nav-item">
+                    <a href="/trashedBlogs" class="nav-link">
+                      <i class="fas fa-trash"></i>
+                      <p>Trashed Blogs</p>
+                    </a>
+                  </li>
                 </ul>
               </li>
               <li class="nav-item has-treeview menu-open">
