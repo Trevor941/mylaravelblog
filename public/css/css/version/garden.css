@@ -122,10 +122,8 @@ p,
 	color:#ffffff !important; 
 }
 
-.footer {
-	background-color: #000000 !important;
-}
 
+.footer,
 .small-title,
 .page-title .bg-green, .masonry-box:hover .blog-meta span.bg-green, .color-green a,
 .navbar-toggler,
@@ -141,8 +139,8 @@ p,
 .page-link,
 .topbar-section {
 	color:#ffffff !important;
-	background-color: #74a044 !important;
-	border-color: #74a044 !important;
+	background-color: #737381c2 !important;
+	border-color: #737381c2 !important;
 }
 
 
@@ -155,5 +153,5 @@ a:focus,
 .navbar-nav .nav-link.active.color-green-hover,
 .navbar-nav .nav-link.color-green-hover:hover,
 .navbar-nav .nav-link.color-green-hover:focus {
-    color: #74a044 !important;
+    color: #737381c2 !important;
 }

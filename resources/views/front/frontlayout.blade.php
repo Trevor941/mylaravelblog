@@ -62,8 +62,8 @@
             <div class="container-fluid">
                 <div class="row">
                     <div class="col-lg-4 col-md-6 col-sm-6 hidden-xs-down">
-                        <div class="topsocial">
-                            <h3>Self Blog</h3>
+                        <div class="topsocial ">
+                            <h3 class="text-white">Self Blog</h3>
                         </div><!-- end social -->
                     </div><!-- end col -->
 
@@ -123,12 +123,12 @@
             @yield('main-content')
            
 
-        <footer class="bg-success mb-0">
+        <footer class="mb-0 footer">
             
-                        <p class="text-white text-center py-3">&COPY;Self Blog 2021</p>
+                        <p class="text-white">&COPY;Self Blog 2021</p>
          
         </footer><!-- end footer -->
-
+    </div>
         <div class="dmtop">Scroll to Top</div>
         
     </div><!-- end wrapper -->
@@ -144,20 +144,31 @@
     <script src="js/bootstrap.min.js"></script>
     <script src="js/custom.js"></script>
 
-    <script>
-        $(document).ready(function(){
-            var search = $('#search').val();
-            if(search != ''){
-            $('#searchSubmit').click(function(){
-            $('#blogSection').highlight(search,{
-            background:"#ffff00",
-           color:"#000",
-            bold:false,
-            });
-            });
-            }
-        });
-
-    </script>
+    <script type="text/javascript">  
+   
+        $('#searchSubmit').bind('click', function (e) {    
+                  e.preventDefault();    
+                  var searchTxtBox = $('#search');    
+                  searchTxtBox.val(searchTxtBox.val().replace(/(\s+)/,"(<[^>]+>)*$1(<[^>]+>)*"));    
+                  var textarea = $('#blog-box');    
+                  var enew = '';    
+                  if (searchTxtBox.val() != '') {    
+          
+                      enew = $('#blog-box').html().replace(/(<mark>|<\/mark>)/igm, "");    
+                        $('#blog-box').html(enew);     
+                          
+                      var query = new RegExp("("+searchTxtBox.val()+")", "gim");    
+                      newtext= $('#blog-box').html().replace(query, "<mark>$1</mark>");    
+                      newtext= newtext.replace(/(<mark>[^<>]*)((<[^>]+>)+)([^<>]*<\/mark>)/,"</mark><mark>");    
+          
+                        $('#blog-box').html(newtext);     
+        
+                  }    
+                  else {    
+                      enew = $('#blog-box').html().replace(/(<mark>|<\/mark>)/igm, "");    
+                        $('#blog-box').html(enew);     
+                  }    
+              });     
+      </script>
 </body>
 </html>

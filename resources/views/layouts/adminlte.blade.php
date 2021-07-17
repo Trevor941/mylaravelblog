@@ -116,8 +116,8 @@ display: none !important;
     </form> -->
     </nav>
   <aside class="main-sidebar sidebar-dark-primary elevation-4">
-    <a href="/docs/3.0/index.html" class="brand-link logo-switch">
-      Logo Text
+    <a href="/admin" class="brand-link logo-switch">
+      SELF BLOG
     </a>
     <div class="sidebar">
       <nav class="mt-2">
@@ -167,6 +167,22 @@ display: none !important;
                     </a>
                   </li>
                 </ul>
+              </li>
+              <li class="nav-item has-treeview ">
+                <a href="/" class="nav-link active">
+                  <i class="nav-icon fas fa-globe"></i>
+                  <p>
+                   Website
+                  </p>
+                </a>
+                {{-- <ul class="nav nav-treeview" style="display: block;">
+                  <li class="nav-item">
+                    <a href="/users" class="nav-link">
+                      <i class="fas fa-user-lock"></i>
+                      <p>Users</p>
+                    </a>
+                  </li>
+                </ul> --}}
               </li>
             
         </ul>

@@ -49,7 +49,7 @@
                             @if($blogs->count()> 0)
                             <div class="blog-list clearfix">
                                 @foreach ($blogs as $blog)
-                                <div class="blog-box row">
+                                <div class="blog-box row" id="blog-box">
                                     <div class="col-md-4">
                                         <div class="post-media">
                                             <a href="garden-single.html" title="">
