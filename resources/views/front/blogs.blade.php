@@ -12,7 +12,7 @@
                     @foreach($mainThreeBlogs as $blog)
                     <div class="center-side">
                         <div class="masonry-box post-media">
-                             <img src="images/{{$blog->blog_image}}" alt="" class="img-fluid">
+                             <img src="images/{{$blog->blog_image}}" height="100%" alt="" class="img-fluid">
                              <div class="shadoweffect">
                                 <div class="shadow-desc">
                                     <div class="blog-meta">

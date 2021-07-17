@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\Blog;
 use Illuminate\Support\Str;
 use App\Models\User;
+use App\Models\Category;
 
 class BlogsController extends Controller
 {
@@ -32,7 +33,7 @@ class BlogsController extends Controller
     public function create()
     {
         //
-        return view('blogs.create');
+        return view('blogs.create')->with('categories', Category::all());
     }
 
     /**
@@ -61,7 +62,10 @@ class BlogsController extends Controller
         $blog->body = $request->body;
          $blog->blog_image = $imageName;
         $user->blogs()->save($blog);
+        $categoriesid = $request->categoriesid;
+        $blog->categories()->attach($categoriesid);
         return redirect('/admin')->with('success', 'Blog added successfully');
+        return $categoriesid;
 
     }
 
@@ -124,6 +128,8 @@ class BlogsController extends Controller
         $blog->blog_image = $imageName;
        }
        $user->blogs()->save($blog);
+       $categoriesid = $request->categoriesid;
+       $blog->categories()->sync($categoriesid);
        return redirect('/blogs'.'/'.$blog->id)->with('success', 'Post updated successfully');
     }
     else{

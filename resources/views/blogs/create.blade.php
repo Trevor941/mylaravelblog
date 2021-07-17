@@ -23,6 +23,15 @@
                 <textarea class="form-control tinymce-editor" name="body" rows="5"></textarea>
             </div>
             <div class="form-group">
+                <label for="title">Select Category</label>
+                <select name="categoriesid[]" id="categories" class="form-control">
+                @foreach($categories as $category)
+                 <option value="{{$category->id}}">{{$category->name}}</option>
+                 @endforeach
+                </select>
+               
+            </div>
+            <div class="form-group">
                 @error('blog_image')
                  <div class="alert alert-danger">{{$message}}</div>
                 @enderror
