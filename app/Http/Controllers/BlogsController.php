@@ -92,7 +92,9 @@ class BlogsController extends Controller
     {
         //
         $blog = Blog::findOrFail($id);
-        return view('blogs.edit', compact('blog'));
+        return view('blogs.edit')
+        ->with('blog', $blog)
+        ->with('categories', Category::all());
     }
 
     /**

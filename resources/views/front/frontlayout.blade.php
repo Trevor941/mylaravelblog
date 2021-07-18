@@ -33,7 +33,7 @@
 
     <!-- Colors for this template -->
     <link href="{{asset('css/css/colors.css')}}" rel="stylesheet">
-
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <!-- Version Garden CSS for this template -->
     <link href="{{asset('css/css/version/garden.css')}}" rel="stylesheet">
     <script src="{{ asset('css/js/app.js') }}" defer></script>
@@ -63,7 +63,7 @@
                 <div class="row">
                     <div class="col-lg-4 col-md-6 col-sm-6 hidden-xs-down">
                         <div class="topsocial ">
-                            <h3 class="text-white">Self Blog</h3>
+                            <h3 class="text-white"><a href="/">Self Blog</a></h3>
                         </div><!-- end social -->
                     </div><!-- end col -->
 
@@ -72,7 +72,9 @@
 
                     <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12">
                         <div class="topsearch text-right">
-                            <a data-toggle="collapse" href="#collapseExample" aria-expanded="false" aria-controls="collapseExample"><i class="fa fa-search"></i> Search</a>
+                            @if(auth()->user())
+                            <a href="/admin" style="font-size: 20px;"><i class="fa fa-laptop"></i> Dashboard</a>
+                            @endif
                         </div><!-- end search -->
                     </div><!-- end col -->
                 </div><!-- end row -->
@@ -84,7 +86,7 @@
                 <div class="row">
                     <div class="col-md-12">
                         <div class="logo">
-                            <a href="garden-index.html"><img src="images/version/garden-logo.png" alt=""></a>
+                            <a href="/"><img src="images/version/garden-logo.png" alt=""></a>
                         </div><!-- end logo -->
                     </div>
                 </div><!-- end row -->
