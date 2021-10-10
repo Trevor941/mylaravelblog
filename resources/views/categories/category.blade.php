@@ -5,13 +5,21 @@
     <meta name="description" content="Blogs">
 @endsection
 @section('top-banner')
-        <section class="section first-section">
+        <div class="page-title wb">
             <div class="container">
                 <div class="row">
-                    <h3>{{$category->name}}</h3>
-                </div>
-            </div>
-        </section>
+                    <div class="col-lg-8 col-md-8 col-sm-12 col-xs-12">
+                        <h2><i class="fa fa-leaf bg-green"></i>{{$category->name}}</h2>
+                    </div><!-- end col -->
+                    <div class="col-lg-4 col-md-4 col-sm-12 hidden-xs-down hidden-sm-down">
+                        <ol class="breadcrumb">
+                            <li class="breadcrumb-item"><a href="#">Home</a></li>
+                            <li class="breadcrumb-item active">Blog</li>
+                        </ol>
+                    </div><!-- end col -->                    
+                </div><!-- end row -->
+            </div><!-- end container -->
+        </div><!-- end page-title -->
 @endsection
 @section('main-content')
         <section class="section wb">
