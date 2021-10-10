@@ -14,7 +14,7 @@
                     <div class="col-lg-4 col-md-4 col-sm-12 hidden-xs-down hidden-sm-down">
                         <ol class="breadcrumb">
                             <li class="breadcrumb-item"><a href="#">Home</a></li>
-                            <li class="breadcrumb-item active">Blog</li>
+                            <li class="breadcrumb-item active">Categories</li>
                         </ol>
                     </div><!-- end col -->                    
                 </div><!-- end row -->
@@ -33,7 +33,7 @@
                                 <div class="blog-box row" id="blog-box">
                                     <div class="col-md-4">
                                         <div class="post-media">
-                                            <a href="garden-single.html" title="">
+                                            <a href="/singleblog/{{$blog->slug}}" title="">
                                                 <img src="/images/{{$blog->blog_image}}" alt="" class="img-fluid">
                                                 <div class="hovereffect"></div>
                                             </a>

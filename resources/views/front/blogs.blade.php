@@ -16,11 +16,11 @@
                              <div class="shadoweffect">
                                 <div class="shadow-desc">
                                     <div class="blog-meta">
-                                        <span class="bg-aqua"><a href="blog-category-01.html" title="">
+                                        <span class="bg-aqua"><a href="#" title="">
                                             @if(count($blog->categories)>0)
                                             <span class="bg-aqua">
                                                 @foreach ($blog->categories as $category)
-                                                <a href="#" title="">
+                                                <a href="/categories/{{$category->id}}" title="">
                                                     {{$category->name}}
                                                 </a>
                                                 @endforeach    
@@ -52,7 +52,7 @@
                                 <div class="blog-box row" id="blog-box">
                                     <div class="col-md-4">
                                         <div class="post-media">
-                                            <a href="garden-single.html" title="">
+                                            <a href="/singleblog/{{$blog->slug}}" title="">
                                                 <img src="images/{{$blog->blog_image}}" alt="" class="img-fluid">
                                                 <div class="hovereffect"></div>
                                             </a>
@@ -63,7 +63,7 @@
                                         @if(count($blog->categories)>0)
                                         <span class="bg-aqua">
                                             @foreach ($blog->categories as $category)
-                                            <a href="#" title="">
+                                            <a href="/categories/{{$category->id}}" title="">
                                                 {{$category->name}}
                                             </a>
                                             @endforeach
@@ -71,8 +71,8 @@
                                         @endif
                                         <h4><a href="/singleblog/{{$blog->slug}}" title="">{{$blog->title}}</a></h4>
                                         <p>{{ substr(strip_tags($blog->body), 0, 200) }}...</p>
-                                        <small><a href="garden-category.html" title=""><i class="fa fa-eye"></i> 1887</a></small>
-                                        <small><a href="garden-single.html" title="">{{$blog->created_at->todatestring()}}</a></small>
+                                        <small><a href="#" title=""><i class="fa fa-eye"></i> 1887</a></small>
+                                        <small><a href="#" title="">{{$blog->created_at->todatestring()}}</a></small>
                                         <small><a href="#" title="">by {{$blog->user->name}}</a></small>
                                     </div><!-- end meta -->
                                 </div><!-- end blog-box -->
