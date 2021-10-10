@@ -17,14 +17,14 @@
         <section class="section wb">
             <div class="container">
                 <div class="row">
-                    <div class="col-lg-9 col-md-12 col-sm-12 col-xs-12">
+                    <div class="col-md-8 offset-md-2">
                         <div class="page-wrapper">
                             @if (Session('success'))
                                 <div class="alert alert-success">
                                     <p>{{session('success')}}</p>
                                 </div>
                             @endif
-                           <form action="/contactform" method="Post" enctype="multipart/form-data">
+                           <form action="/contactform" method="Post" enctype="multipart/form-data" style="    padding: 40px; background: #eee; border-radius: 5px;">
                                @csrf
                                <div class="form-group">
                                    <label for="Name">Name</label>

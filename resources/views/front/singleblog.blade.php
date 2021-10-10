@@ -30,7 +30,7 @@
                             <div class="blog-title-area">
                                 <span class="color-green">
                                 @foreach ($blog->categories as $category)
-                                <a href="#" title="">
+                                <a href="/categories/{{$category->id}}" title="">
                                  {{$category->name}}
                                 </a>
                                 @endforeach
@@ -38,8 +38,8 @@
                                 <h3>{{$blog->title}}</h3>
 
                                 <div class="blog-meta big-meta">
-                                    <small><a href="garden-single.html" title="">21 July, 2017</a></small>
-                                    <small><a href="blog-author.html" title="">by {{$blog->user->name}}</a></small>
+                                    <small><a href="#" title="">21 July, 2017</a></small>
+                                    <small><a href="#" title="">by {{$blog->user->name}}</a></small>
                                     <small><a href="#" title=""><i class="fa fa-eye"></i> 2344</a></small>
                                 </div><!-- end meta -->
 

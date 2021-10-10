@@ -26,9 +26,9 @@
                                                 @endforeach    
                                         </a></span>
                                        @endif
-                                        <h4><a href="garden-single.html" title="">{{$blog->title}}</a></h4>
-                                        <small><a href="garden-single.html" title="">19 July, 2017</a></small>
-                                        <small><a href="#" title="">by {{$blog->user->name}}</a></small>
+                                        <h4><a href="/singleblog/{{$blog->slug}}" title="">{{$blog->title}}</a></h4>
+                                        <small><a href="/singleblog/{{$blog->slug}}" title="">19 July, 2017</a></small>
+                                        <small><a href="/singleblog/{{$blog->slug}}" title="">by {{$blog->user->name}}</a></small>
                                     </div><!-- end meta -->
                                 </div><!-- end shadow-desc -->
                             </div><!-- end shadow -->
