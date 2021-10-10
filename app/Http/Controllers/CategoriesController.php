@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Blogs;
 
 class CategoriesController extends Controller
 {
@@ -80,5 +81,11 @@ class CategoriesController extends Controller
     public function destroy($id)
     {
         //
+    }
+
+    public function NewsBlogs(){
+
+        $blogs = Blog::where('category_id', 1)->get();
+        return $blogs;
     }
 }

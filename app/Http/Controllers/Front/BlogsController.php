@@ -27,11 +27,11 @@ class BlogsController extends Controller
             $blogs = Blog::simplePaginate(5);
         }
             
-        $categories = Category::all();
+        
         return view('front.blogs')
         ->with('blogs', $blogs)
         ->with('mainThreeBlogs', Blog::all()->random(3))
-        ->with('categories', $categories)
+        ->with('categories', Category::all())
         ->with('recentBlogs', Blog::orderBy('created_at', 'desc')->take(3)->get());
     }
 

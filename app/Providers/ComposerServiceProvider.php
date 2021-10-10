@@ -34,7 +34,7 @@ class ComposerServiceProvider extends ServiceProvider
         // $user = User::find($user_id);
         // $myBlogs = $user->blogs;
         View::composer('layouts.adminlte', function($view){
-            $view->with('myBlogs', User::find(auth()->user()->id)->blogs);
+            //$view->with('myBlogs', User::find(auth()->user()->id)->blogs);
         });
     }
 }

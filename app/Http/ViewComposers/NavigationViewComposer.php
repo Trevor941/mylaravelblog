@@ -8,6 +8,6 @@ class NavigationViewComposer
 {
     public function compose($view)
     {
-        $view->with('myBlogs', User::find(auth()->user()->id)->blogs);
+        //$view->with('myBlogs', User::find(auth()->user()->id)->blogs);
     }
 }

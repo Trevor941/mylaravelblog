@@ -64,7 +64,7 @@ display: none !important;
       <ul class="navbar-nav ml-auto">
         <!-- Authentication Links -->
         <li class="nav-item">
-         <a href = "/myblogs" class="nav-link"><i class="fas fa-blog"></i>@if(count($myBlogs)>0)<span class="badge">{{$myBlogs->count()}}</span>@endif&nbsp;MyBlogs</a>
+         <a href = "/myblogs" class="nav-link"><i class="fas fa-blog"></i>MyBlogs</a>
         </li>
         <li class="nav-item">
           <a href = "/inbox" class="nav-link"><i class="fas fa-envelope"></i>&nbsp;Messages</a>

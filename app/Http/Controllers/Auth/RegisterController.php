@@ -72,7 +72,7 @@ class RegisterController extends Controller
             'role_id' => 3
         ]);
         
-        return redirect('/login')->with('success', 'Registration successful, login with your email and password');
+        //return redirect('/login')->with('success', 'Registration successful, login with your email and password');
     }
 
    

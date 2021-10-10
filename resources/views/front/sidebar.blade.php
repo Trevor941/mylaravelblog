@@ -18,7 +18,7 @@
                 @foreach ($recentBlogs as $blog)
                     <a href="singleblog/{{$blog->slug}}" class="list-group-item list-group-item-action flex-column align-items-start">
                         <div class="w-100 justify-content-between">
-                            <img src="images/{{$blog->blog_image}}" alt="" class="img-fluid float-left">
+                            <img src="/images/{{$blog->blog_image}}" alt="" class="img-fluid float-left">
                             <h5 class="mb-1">{{$blog->title}}</h5>
                             <small>12 Jan, 2016</small>
                         </div>
@@ -38,7 +38,7 @@
             <div class="link-widget">
                 <ul>
                     @foreach ($categories as $category)
-                    <li><a href="#">{{$category->name}} <span>({{$category->blogs()->count()}})</span></a></li>
+                    <li><a href="/categories/{{$category->id}}">{{$category->name}} <span>({{$category->blogs()->count()}})</span></a></li>
                     @endforeach
                 </ul>
             </div><!-- end link-widget -->

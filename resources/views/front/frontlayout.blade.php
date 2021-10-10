@@ -102,16 +102,13 @@
                     <div class="collapse navbar-collapse justify-content-md-center" id="Forest Timemenu">
                         <ul class="navbar-nav">
                             <li class="nav-item">
-                                <a class="nav-link color-green-hover" href="garden-index.html">Home</a>
+                                <a class="nav-link color-green-hover" href="/">Home</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link color-green-hover" href="garden-category.html">Categories</a>
+                                <a class="nav-link color-green-hover" href="/">Blogs</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link color-green-hover" href="garden-category.html">Blogs</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link color-green-hover" href="garden-contact.html">Contact</a>
+                                <a class="nav-link color-green-hover" href="/contactform">Contact</a>
                             </li>
                         </ul>
                     </div>
