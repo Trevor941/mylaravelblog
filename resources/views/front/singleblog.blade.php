@@ -1,6 +1,6 @@
 @extends('front.frontlayout')
 @section('meta-title')
-<title>Self Blog - {{$blog->title}}</title>
+<title>Self Blogs - {{$blog->title}}</title>
     <meta name="keywords" content="{{$blog->title}}">
     <meta name="description" content="{{ substr(strip_tags($blog->body), 0, 200) }}">
 @endsection
