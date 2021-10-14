@@ -63,7 +63,7 @@
                 <div class="row">
                     <div class="col-lg-4 col-md-6 col-sm-6 hidden-xs-down">
                         <div class="topsocial ">
-                            <h3 class="text-white"><a href="/">Self Blog - TestingDeploy</a></h3>
+                            <h3 class="text-white"><a href="/">Self Blog - TestingDeploys</a></h3>
                         </div><!-- end social -->
                     </div><!-- end col -->
 
