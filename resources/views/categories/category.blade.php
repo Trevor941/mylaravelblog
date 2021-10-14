@@ -19,7 +19,7 @@
                     </div><!-- end col -->                    
                 </div><!-- end row -->
             </div><!-- end container -->
-        </div><!-- end page-title -->
+        </div><!--  -->
 @endsection
 @section('main-content')
         <section class="section wb">
